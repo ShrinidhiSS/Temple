@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for detail in details %}
+    Unique ID : {{ detail.unique_id }}<br>
+    Anbiyam : {{ detail.anbiyam }}<br>
+    Name : {{ detail.name }}<br>
+    Gender : {{ detail.gender }}<br>
+    Relationship : {{ detail.relationship }}<br>
+    Aadhaar No : {{ detail.aadhaar }}<br>
+    Status : {{ detail.status }}<br>
+    Place : {{ detail.place }}<br>
+    District : {{ detail.district }}<br>
+    State : {{ detail.country }}<br>
+    Country : {{ detail.pincode }}<br>
+    House Status : {{ detail.house_status }}<br>
+<hr>
+{% endfor %}
+
+{% endblock %}
