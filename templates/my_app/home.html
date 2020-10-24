@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    {% for detail in details %}
 
-{% for detail in details %}
-    Unique ID : {{ detail.unique_id }}<br>
-    Anbiyam : {{ detail.anbiyam }}<br>
-    Name : {{ detail.name }}<br>
-    Gender : {{ detail.gender }}<br>
-    Relationship : {{ detail.relationship }}<br>
-    Aadhaar No : {{ detail.aadhaar }}<br>
-    Status : {{ detail.status }}<br>
-    Place : {{ detail.place }}<br>
-    District : {{ detail.district }}<br>
-    State : {{ detail.country }}<br>
-    Country : {{ detail.pincode }}<br>
-    House Status : {{ detail.house_status }}<br>
-<hr>
-{% endfor %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ detail.family_head }}</a>
+            </div>
+            <h2><a class="article-title" href="{% url 'church-detail' detail.id %}">{{ detail.name }}</a></h2>
+          </div>
+        </article>
+
+    {% endfor %}
+    <div class="form-group">
+        <a class="btn btn-outline-secondary" type="submit" href="{% url 'church-create' %}">Add</a>
+    </div>
+
 
 {% endblock %}
